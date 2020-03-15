@@ -1,0 +1,62 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath, amssymb}
+\newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}
+
+\title{COMPSCI 120 Assignment One}
+\author{Alexander Bailey}
+
+\begin{document}
+\maketitle
+\section*{Question 1}
+\subsection*{a.}
+\subsection*{b.}
+\begin{center}
+    \textit{Find $152615278636986567767^{12345678} \Mod 5$}
+\end{center}
+\begin{align*}
+    152615278636986567767^{12345678} \Mod 10 = 7^{12345678} \\
+    (7^2) \Mod 10 = 49 \Mod 10 = 9 \Mod 10 \\
+    (7^4) \Mod 10 = (7^2 \cdot 7^2) \Mod 10 = (9 \cdot 9) \Mod 10 = 1 \Mod 10 \\
+    12345678 = 308669 \cdot 4 + 2 \\
+    (7^{4k} \cdot 7^2) \Mod 10 = (1\cdot9)\Mod10 = 9 \\
+    9 \Mod 5 = 4 \\
+    152615278636986567767^{12345678} \Mod 5 = 4 \\
+\end{align*} 
+
+\subsection*{c.}
+\section*{Question 2}
+\subsection*{a.}
+\subsection*{b.}
+\subsection*{c.}
+\subsection*{d.}
+\section*{Question 3}
+\subsection*{a.}
+\begin{center}
+    \textit{Check whenever 1928467 is a UPC} \\
+\end{center}
+
+There is only one condition for n to be a UPC.
+\begin{align*}
+    c = (3M + N)\%10
+\end{align*}
+Where:
+\begin{itemize}
+    \item The sum of the odd position digits (not including the last) is M 
+    \item The sum of the even position digits (not including the last) is N 
+\end{itemize}
+So for 1928467:
+\begin{align*}
+    M = 1 + 2 + 4 = 7 \\
+    N = 9 + 8 + 6 = 23  \\
+    \therefore C = (3\cdot7 + 23)\%10 = 4 \\
+    C \neq 0 \\
+    7 \neq 10 - 4 \\
+\end{align*}
+$\therefore$ 1928467 is not a UPC 
+
+\subsection*{b.}
+\subsection*{c.}
+\section*{Question 4}
+\subsection*{a.}
+\subsection*{b.}
+\end{document}
