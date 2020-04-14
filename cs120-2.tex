@@ -1,0 +1,190 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath, amssymb, MnSymbol}
+
+\title{COMPSCI 120 Assignment Two}
+\author{Alexander Bailey} 
+
+\begin{document}
+\maketitle
+
+\section*{Question 1 (Sets)}
+\subsection*{a.}
+\subsubsection*{i.}
+\begin{center} \textit{List out the elements of A and the elements of C} \end{center}
+\begin{align*}
+    A = &\{ x \in \mathbb{N} \mid x^2 < 37 \} && C = &\{3k+1 \mid k \in \{1, 2, 3, 4\}\} \\
+    A = &\{0, 1, 2, 3, 4, 5, 6 \} && C = &\{ 4, 7, 10, 13 \} \\
+\end{align*}
+
+\subsubsection*{ii.}
+\begin{center} \textit{List all the subsets of D of C such that $\{1,2\} \subseteq D$} \end{center}
+No subset of C contains the values $\{1,2\}$ hence D is an empty set. 
+\begin{align*}
+    D = \emptyset \\
+\end{align*}
+
+\subsubsection*{iii.}
+\begin{center} \textit{List all subsets E of B such that $3 \notin E$} \end{center}
+\begin{align*}
+    E = \{ 2,5 \}, \{2\}, \{5\} \\ 
+\end{align*}
+\subsubsection*{iv.}
+\begin{center} \textit{Find the elements of $(A \cup C) \setminus B$ } \end{center}
+\begin{align*}
+    A \cup C = \{ 0, 1, 2, 3, 4, 5, 6, 7, 10, 13 \} \\
+    (A \cup C) \setminus B = \{0, 1, 4, 6, 7, 10, 13 \} \\
+\end{align*}
+
+\subsection*{b.}
+\begin{center} \textit{For any sets A, B, and C, prove or disprove the following claims} \end{center}
+\subsubsection*{i.}
+\begin{center} $(A \cup B) \setminus C \subseteq A \cup (B \setminus C)$ \end{center}
+$A \cup B$ is by definition the collection of the elements in both A and B so $(A \cup B) \setminus C$ 
+is the collection of them elements in both A and B that are not in C. 
+\\*
+\\*
+Also by defintion, $B \setminus C$ is the collection of the elements that are in B but not in C so $A \cup (B \setminus C)$
+is the collection of elements that are in A and in B but not C. 
+\\*
+\\*
+Hence $(A \cup B) \setminus C$ is a subset of $A \cup (B \setminus C)$ as $A \cup (B \setminus C)$ will
+contain the elements of A that are also in C and $A \cup (B \setminus C)$ will not contain those elements
+but will contain the elements of A that are not in C and the elements of B that are not in C. $\therefore$ True
+
+\subsubsection*{ii.}
+\begin{center} If $A \in B, B \in C$, then $A \in C$ \end{center}
+A belongs to the element B of C. A is not an element of C ($A \notin C$) but an element of a set (B) that belongs to C. $\therefore$ False
+e.g
+\begin{align*}
+    1 \in \{0,1,2\} \\
+    \{0,1,2\} \in \{\{0,1,2\}, 3\} \\
+    1 \notin \{\{0,1,2\}, 3\} \\
+\end{align*}
+
+\newpage
+\subsection*{c.}
+\begin{center} \textit{Prove that the sets A and B are equal} \end{center}
+For the two sets to be equal, every element in A must be an element of B and every element of B must be an element of A.
+\begin{align*}
+    &A = \{n \mid n = 4k+1 \text{ for some } k \in \mathbb{Z}\} \\
+    &B = \{n \mid n = 4k-3 \text{ for some } k \in \mathbb{Z}\} \\ 
+    &A \subseteq B \\
+    &B \subseteq A \\
+\end{align*}
+
+\section*{Question 2 (Counting)}
+\subsection*{a.}
+\begin{center} \textit{A student ID in a university is made up of 6 alphanumeric characters - three letters ,lowercase only followed by three digits (example: abc123). How many possible student ID's can be generated if} \end{center}
+
+\subsubsection*{i.}
+\begin{center} \textit{the digits are distinct, the letters are arbitrary} \end{center}
+$n_1 = 10$ because there are 10 possible digits, $k_1=3$ because there are three digits in the ID.
+$n_2 = 26$ because there are 26 possible letters, $k_2=3$ because there are three letters in the ID.
+The digits are ordered choice with no repetition (distinct) and the letters are ordered choice with repetition (arbitrary).
+These are multiplied by the 'multiplication rule'. Where N is the number of IDs possible.
+\begin{align*}
+    N = \frac{n!}{k!} \cdot n^k \\
+    N = \frac{10!}{3!} \cdot 26^3 \\
+\end{align*}
+
+\subsubsection*{ii.}
+\begin{center} \textit{the letters are distinct, the digits are arbitrary} \end{center}
+$n_1 = 10$ because there are 10 possible digits, $k_1=3$ because there are three digits in the ID.
+$n_2 = 26$ because there are 26 possible letters, $k_2=3$ because there are three letters in the ID.
+The letters are ordered choice with no repetition (distinct) and the digits are ordered choice with repetition (arbitrary).
+These are multiplied by the 'multiplication rule'. Where N is the number of IDs possible.
+\begin{align*}
+    N = n^k  \cdot \frac{n!}{k!}  \\
+    N = \frac{26!}{3!} \cdot 10^3 \\
+\end{align*}
+
+\subsubsection*{iii.}
+\begin{center} \textit{the letters and digits are distinct} \end{center}
+$n_1 = 10$ because there are 10 possible digits, $k_1=3$ because there are three digits in the ID.
+$n_2 = 26$ because there are 26 possible letters, $k_2=3$ because there are three letters in the ID.
+The digits are ordered choice with no repetition (distinct) and the letters are ordered choice with repetition (arbitrary).
+These are multiplied by the 'multiplication rule'. Where N is the number of IDs possible.
+\begin{align*}
+    N = \frac{n!}{k!} \cdot \frac{n!}{k!}\\
+    N = \frac{26!}{3!} \cdot \frac{10!}{3!} \\
+\end{align*}
+\newpage
+\subsection*{b.}
+\begin{center} \textit{How many solutions are there to the equation when $y_n$ is a nonnegative integer and $y_1 \leq 5$} \end{center}
+This is a problem of unorddered selection without repetition."Balls in boxes" etc. Hence the formula is 
+${n+k-1 \choose k}$ (from lecture materials). Where n is the RHS and k is the number of variables (5). 
+\begin{align*}
+    &y_1 + y_2 + y_3 + y_4 + y_5 + y_6  = 29 \\
+    &y_1 \leq 5 \\
+    &\therefore y_2 + y_3 + y_4 + y_5 + y_6 = 29, 28, 27, 26, 25, 24 \\
+    &\text{Six Cases: } y_1 = 0, 1, 2, 3, 4, 5 \\
+    &\text{Where N is the number of solutions} \\
+    &y_1 = 0: N = {33 \choose 5} \\
+    &y_1 = 1: N = {32 \choose 5} \\
+    &y_1 = 2: N = {31 \choose 5} \\
+    &y_1 = 3: N = {30 \choose 5} \\
+    &y_1 = 4: N = {29 \choose 5} \\
+    &y_1 = 5: N = {28 \choose 5} \\
+\end{align*}
+
+\subsection*{c.}
+\begin{center} \textit{Five friends decided to go to a restaurant for dinner and were seated at a table for five. Show that the probability that they were seated around the table in increasing order of age (either clockwise or anti clockwise direction with respect to the youngest person in the group) happening is less than 10\%} \end{center}
+
+\section*{Question 3 (Functions)}
+\subsection*{a.}
+\begin{center} \textit{State with reason which of the rules defined below is (or is not) a function with domain and codomain both equal to X} \end{center}
+\begin{align*}
+    X = \{1,2,3,4\} \\
+\end{align*}
+
+\subsubsection*{i.}
+\begin{align*}
+    f(2) = 3, (1) = 4, f(2) = 1, f(3) = 4, f(4) = 1, \\
+\end{align*}
+f is not a function because there are multiple output values defined for the input 2
+therefore does not have a domain or codomain both equal to X. 
+
+$\therefore$ False
+
+\subsubsection*{ii.}
+\begin{align*}
+    g(3) = 1, g(4) = 3, g(1) = 2, \\
+    \text{domain: } \{1,3,4\}\text{,} 
+    \text{ co-domain: } \{1,2,3\} 
+\end{align*}
+g is a function but does not have X as a domain or a co-domain. 
+$\therefore$ False
+
+\subsubsection*{iii.}
+\begin{align*}
+    h(2) = 1, h(3) = 4, h(1) = 2, h(2)=1, h(4) = 3 \\
+    \text{domain: } \{1,2,3,4\}\text{,} 
+    \text{ co-domain: } \{1,2,3,4\} 
+\end{align*}
+h is a function that has a domain and co-domain both equal to X.
+$\therefore$ True 
+
+\subsection*{b.}
+Define $f : \mathbb{R} \rightarrow \mathbb{R}$ by the rule $f(x) = x^2 + 2$ for every real number x. Let g : $\{\spadesuit, \heartsuit, \clubsuit, \diamondsuit\} \rightarrow  \mathbb{R}$
+be a function defined by the rule: $g(\spadesuit) = 1, g(\heartsuit) = 2, g(\clubsuit) = -1, g(\diamondsuit) = -2$. Find the domain and range of $f \circ g$.
+
+\subsection*{c.}
+\subsubsection*{i.}
+Given h : $\mathbb{R} \rightarrow \mathbb{R}$ is a function defined by the rule $h(x) = (x + 1)^2 + 2(x + 1) - 3$, find
+two functions f : $\mathbb{R} \rightarrow \mathbb{R}$ and g : $\mathbb{R} \rightarrow \mathbb{R}$ which, when composed, generate the function h
+In other words, write h = $f \circ g$.
+\\*
+\\*
+$f \circ g$ exists because g's co-domain = f's domain = $\mathbb{R}$
+\begin{align*}
+    (f \circ g)(x) = f(g(x)) \\
+    f(x) = x^2 + 2x - 3 \\
+    g(x) = x + 1 \\
+    f(x+1) = (x+1)^2 +2(x+1) - 3 = h(x) \\
+    (f \circ g)(x) = h(x) \\ 
+\end{align*}
+
+\subsubsection*{ii.}
+Let f : $\mathbb{R} \rightarrow \mathbb{R}$ and g : $\mathbb{R} \rightarrow \mathbb{R}$ be functions. Find g(x) if $f(x) = x^2 + 6x - 1$ and
+
+\end{document}
